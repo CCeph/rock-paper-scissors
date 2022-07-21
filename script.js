@@ -21,4 +21,7 @@ function getComputerChoice() {
         default:
             console.log("Error in the computer choice.")
     }
+    return computerGameChoice
 }
+
+getComputerChoice()
