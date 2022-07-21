@@ -28,13 +28,39 @@ function getComputerChoice() {
 playerSelection = prompt("Welcome! Choose rock, paper, or scissors to play.")
 
 /**
- * This function plays one round of rock, paper, scissors.
+ * This function plays one round of rock, paper, scissors and returns a string with the results.
  * 
  * @param {*} playerSelection is the player's selection for the game
  * @param {*} computerSelection is the computer randomly generated selection, and it's argument should call upon the function getComputerChoice()
+ * The switch statement determines the winner and returns a string explaining the results.
  */
 function oneRound(playerSelection, computerSelection) {
-    //console.log(computerSelection)
+    playerSelection = playerSelection.toLowerCase();
+    switch(true) {
+        case (playerSelection === "rock" && computerSelection === "scissors"):
+            return "You win! Rock beats scissors.";
+        
+        case (playerSelection === "paper" && computerSelection === "rock"):
+            return "You win! Paper beats rock.";
+
+        case (playerSelection === "scissors" && computerSelection === "paper"):
+            return "You win! Scissors beat paper.";
+
+        case (playerSelection === "rock" && computerSelection === "paper"):
+            return "You lose! Paper beats rock.";
+
+        case (playerSelection === "paper" && computerSelection === "scissors"):
+            return "You lose! Scissors beat paper.";
+        
+        case (playerSelection === "scissors" && computerSelection === "rock"):
+            return "You lose! Rock beats scissors.";
+
+        case (playerSelection === computerSelection):
+            return "Draw! Both of you made the same choice.";
+        
+        default:
+            console.log("Error in the game logic.");
+    }
 }
 
-//oneRound(playerSelection, getComputerChoice())
+console.log(oneRound(playerSelection, getComputerChoice()))
