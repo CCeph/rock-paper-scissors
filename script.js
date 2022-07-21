@@ -27,6 +27,12 @@ function getComputerChoice() {
 //Declares a variable playerSelection and stores the selection of the player for the rock, paper, scissors game.
 playerSelection = prompt("Welcome! Choose rock, paper, or scissors to play.")
 
+/**
+ * This function plays one round of rock, paper, scissors.
+ * 
+ * @param {*} playerSelection is the player's selection for the game
+ * @param {*} computerSelection is the computer randomly generated selection, and it's argument should call upon the function getComputerChoice()
+ */
 function oneRound(playerSelection, computerSelection) {
     //console.log(computerSelection)
 }
