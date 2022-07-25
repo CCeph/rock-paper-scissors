@@ -63,4 +63,28 @@ function oneRound(playerSelection, computerSelection) {
     }
 }
 
-console.log(oneRound(playerSelection, getComputerChoice()))
+function game() {
+    let winCounter = 0
+    let lossCounter = 0
+    let drawCounter = 0
+    for (let i = 0; i < 5; i++) {
+        playerChoice = prompt("Choose rock, paper, or scissors to play.")
+        roundResult = oneRound(playerSelection, getComputerChoice())
+        console.log(roundResult)
+        if (roundResult.substr(0, 8) === "You win!") {
+            winCounter += 1
+        } else if (roundResult.substr(0, 9) === "You lose!") {
+            lossCounter += 1
+        } else if (roundResult.substr(0, 5) === "Draw!") {
+            drawCounter += 1
+        }
+        if (winCounter === 3) {
+            return "You won the game!"
+        } else if (lossCounter === 3) {
+            return "You lost the game."
+        }
+    }
+}
+
+//console.log(oneRound(playerSelection, getComputerChoice()))
+console.log(game())
