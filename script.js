@@ -25,7 +25,9 @@ function getComputerChoice() {
 }
 
 //Declares a variable playerSelection and stores the selection of the player for the rock, paper, scissors game.
+/* TEMPORARILY REMOVED: UI rework.
 playerSelection = prompt("Welcome! Choose rock, paper, or scissors to play.")
+*/
 
 /**
  * This function plays one round of rock, paper, scissors and returns a string with the results.
@@ -63,6 +65,8 @@ function oneRound(playerSelection, computerSelection) {
     }
 }
 
+/* TEMPORARILY REMOVED: UI being reworked.
+
 function game(playerChoice) {
     let winCounter = 0
     let lossCounter = 0
@@ -87,3 +91,4 @@ function game(playerChoice) {
 }
 
 console.log(game(playerSelection))
+*/
