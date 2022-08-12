@@ -30,8 +30,18 @@ buttons.forEach(button => button.addEventListener('click', playRound))
 
 function playRound() {
     playerSelection = this.getAttribute('data-selection');
-    roundResult = document.querySelector(".roundResult");
-    roundResult.textContent = "Round result: " + oneRound(playerSelection, getComputerChoice());
+    roundResult = oneRound(playerSelection, getComputerChoice())
+    gameTracking(roundResult)
+}
+
+function gameTracking(roundResult) {
+    matchResult = document.querySelector(".matchResult");
+    if (matchResult.textContent === "No rounds played yet.") {
+        matchResult.textContent = `Round ${"CHANGE"} result: ${roundResult}`
+    } else {
+        matchResult.textContent += `\nRound ${"CHANGE"} result: ${roundResult}`;
+    }
+    
 }
 
 /**
