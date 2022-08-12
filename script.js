@@ -26,16 +26,13 @@ function getComputerChoice() {
 
 
 buttons = document.querySelectorAll(".playButtons")
-buttons.forEach(button => button.addEventListener('click', getPlayerSelection))
+buttons.forEach(button => button.addEventListener('click', playRound))
 
-function getPlayerSelection() {
+function playRound() {
     playerSelection = this.getAttribute('data-selection');
-    oneRound(playerSelection, getComputerChoice())
+    roundResult = document.querySelector(".roundResult");
+    roundResult.textContent = "Round result: " + oneRound(playerSelection, getComputerChoice());
 }
-//Declares a variable playerSelection and stores the selection of the player for the rock, paper, scissors game.
-/* TEMPORARILY REMOVED: UI rework.
-playerSelection = prompt("Welcome! Choose rock, paper, or scissors to play.")
-*/
 
 /**
  * This function plays one round of rock, paper, scissors and returns a string with the results.
