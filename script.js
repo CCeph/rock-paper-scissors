@@ -102,31 +102,3 @@ function oneRound(playerSelection, computerSelection) {
             console.log("Error in the game logic.");
     }
 }
-
-/* TEMPORARILY REMOVED: UI being reworked.
-
-function game(playerChoice) {
-    let winCounter = 0
-    let lossCounter = 0
-    let drawCounter = 0
-    for (let i = 0; i < 5; i++) {
-        roundResult = oneRound(playerChoice, getComputerChoice())
-        console.log(roundResult)
-        if (roundResult.substr(0, 8) === "You win!") {
-            winCounter += 1
-        } else if (roundResult.substr(0, 9) === "You lose!") {
-            lossCounter += 1
-        } else if (roundResult.substr(0, 5) === "Draw!") {
-            drawCounter += 1
-        }
-        if (winCounter === 3) {
-            return "You won the game!"
-        } else if (lossCounter === 3) {
-            return "You lost the game."
-        }
-        playerChoice = prompt("Choose rock, paper, or scissors to play.")
-    }
-}
-
-console.log(game(playerSelection))
-*/
