@@ -42,7 +42,8 @@ function playRound() {
 function gameTracking(roundResult) {
     //Displays the result of each round.
     matchResult = document.querySelector(".matchResult");
-    
+    computerPoints = document.querySelector(".computer");
+    playerPoints = document.querySelector(".player");
     if (matchResult.textContent === "No rounds played yet.") {
         roundNumber += 1
         matchResult.textContent = `Round ${roundNumber} result: ${roundResult}`
@@ -57,8 +58,10 @@ function gameTracking(roundResult) {
 function game(roundResult) {
     if (roundResult.substr(0, 8) === "You win!") {
         winCounter += 1
+        playerPoints.textContent = `Player: ${winCounter} points.`
     } else if (roundResult.substr(0, 9) === "You lose!") {
         lossCounter += 1
+        computerPoints.textContent = `Computer: ${lossCounter} points.`
     } else if (roundResult.substr(0, 5) === "Draw!") {
         drawCounter += 1
     }
