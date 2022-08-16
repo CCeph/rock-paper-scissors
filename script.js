@@ -1,6 +1,7 @@
 let winCounter = 0
 let lossCounter = 0
 let drawCounter = 0
+let roundNumber = 0
 
 /**
  * Returns a random computer choice for the game as the string "rock", "paper", or "scissors".
@@ -41,10 +42,13 @@ function playRound() {
 function gameTracking(roundResult) {
     //Displays the result of each round.
     matchResult = document.querySelector(".matchResult");
+    
     if (matchResult.textContent === "No rounds played yet.") {
-        matchResult.textContent = `Round ${"CHANGE"} result: ${roundResult}`
+        roundNumber += 1
+        matchResult.textContent = `Round ${roundNumber} result: ${roundResult}`
     } else {
-        matchResult.textContent += `\nRound ${"CHANGE"} result: ${roundResult}`;
+        roundNumber += 1
+        matchResult.textContent += `\nRound ${roundNumber} result: ${roundResult}`;
     }   
     game(roundResult) 
 }
